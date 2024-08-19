@@ -1,0 +1,12 @@
+.context-form-register {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
