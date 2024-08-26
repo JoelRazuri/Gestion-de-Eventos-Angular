@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventsService } from '../../shared/services/events.service';
+import { IEvent } from '../../interfaces/event';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +10,16 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
-  constructor(private readonly route: Router) {}
+export class HomeComponent implements OnInit {
+  eventsList: IEvent[] = [];
+  
+  constructor(private readonly route: Router, private service: EventsService) {}
+  
+  ngOnInit(): void {
+    this.service.getAllEvents().subscribe((data: IEvent[]) => {
+      this.eventsList = data;
+    });
+  }
 
   navigateToLogin() {
     this.route.navigate(['/login']);
@@ -18,4 +28,5 @@ export class HomeComponent {
   navigateToSignUp() {
     this.route.navigate(['/sign-up']);
   }
+
 }
