@@ -6,15 +6,21 @@
     border-radius: 1em;
     padding: 0em 2em;
     margin-left: 2em;
-    background-color: beige;
+    background-color: rgb(207, 58, 38);
 }
 
 .content-img-title {
     display: flex;
+    color: whitesmoke;
     height: 50%;
 }
+
+
+
 
 .content-info {
     display: flex;
     flex-direction: column;
+    color: whitesmoke;
 }
+
