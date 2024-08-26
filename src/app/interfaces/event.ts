@@ -1,7 +1,7 @@
-export interface Event {
+export interface IEvent {
     id: number;
     organizer: string;
-    title: string;
+    tilte: string;
     description: string;
     image?: string;
     date: Date;
