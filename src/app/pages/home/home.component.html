@@ -6,15 +6,19 @@
 <hr />
 <h1>Eventos:</h1>
 
-<div class="card">
-  <div class="content-img-title">
-    <img src="" alt="">
-    <h2>Title</h2>
+<div style="display: flex;">
+  @for (event of eventsList; track event.id) {
+  <div class="card">
+    <div class="content-img-title">
+      <img src="" alt="">
+      <h2>{{ event.tilte }}</h2>
+    </div>
+    <div class="content-info">
+      <h4>{{ event.organizer }}</h4>
+      <p>Fecha {{ event.date }}</p>
+      <p>{{ event.description }}</p>
+      <p>Capacidad: {{ event.capacity }}</p>
+    </div>
   </div>
-  <div class="content-info">
-    <p>Fecha</p>
-    <p>Description</p>
-    <p>Capacidad</p>
-  </div>
+  }
 </div>
-
